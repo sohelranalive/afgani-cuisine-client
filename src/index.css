@@ -8,3 +8,19 @@
 .bg-custom-color {
   background-color: #F44E52;
 }
+
+.active {
+  color: #F44E52;
+  font-weight: bold;
+  padding: 0px 10px;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.default {
+  color: black;
+  font-weight: bold;
+  padding: 0px 10px;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
