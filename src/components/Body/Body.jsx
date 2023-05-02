@@ -13,10 +13,9 @@ const Body = () => {
     }, [])
 
     return (
-        <div className='mt-5 mb-5 text-center border border-2'>
-            <h1>Meet the CHEF</h1>
-
-            <Container className='mt-4 mb-5'>
+        <div className='text-center bg-custom-color-light pb-4'>
+            <h1 className='pt-5 text-white fw-bold'>Meet the CHEF</h1>
+            <Container className='mt-4 mb-4'>
                 <div className="row row-cols-1 row-cols-md-3 g-4">
                     {
                         chefInfo.map(chef => <Chef

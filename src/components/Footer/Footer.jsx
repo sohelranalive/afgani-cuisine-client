@@ -3,9 +3,9 @@ import { Container } from 'react-bootstrap';
 
 const Footer = () => {
     return (
-        <div className='bg-custom-color'>
-            <Container className='bg-white rounded px-4'>
-                <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, hic.</h1>
+        <div className='bg-custom-color-light pb-5'>
+            <Container className='bg-white'>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus, nulla?</p>
             </Container>
         </div>
     );

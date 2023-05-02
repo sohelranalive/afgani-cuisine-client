@@ -6,11 +6,45 @@
 }
 
 .bg-custom-color {
-  background-color: #F44E52;
+  background-color: #FF6B15;
+}
+
+.bg-custom-color-light {
+  background-color: #FF6B15;
+  filter: brightness(90%);
+}
+
+
+.my-button {
+  background-color: #FF6B15;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: white;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.my-button:hover {
+  background-color: #FF6B15;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: white;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 5px;
 }
 
 .active {
-  color: #F44E52;
+  color: #FF6B15;
+  font-weight: bold;
+  padding: 0px 10px;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.active:hover {
+  color: #FF6B15;
   font-weight: bold;
   padding: 0px 10px;
   font-size: 1.2rem;
@@ -18,6 +52,14 @@
 }
 
 .default {
+  color: black;
+  font-weight: bold;
+  padding: 0px 10px;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.default:hover {
   color: black;
   font-weight: bold;
   padding: 0px 10px;

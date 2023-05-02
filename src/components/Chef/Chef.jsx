@@ -6,7 +6,7 @@ const Chef = (props) => {
 
     return (
         <div className="col">
-            <div className="card h-100 shadow-lg p-3 mb-5 bg-white rounded">
+            <div className="card h-100 shadow-lg p-4 bg-white rounded">
                 <img src={picture} className="card-img-top w-100 h-100" alt="..." />
                 <div className="card-body text-start">
                     <h5 className="card-title">{name}</h5>
