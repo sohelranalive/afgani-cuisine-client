@@ -23,6 +23,7 @@
   text-decoration: none;
   padding: 5px 10px;
   border-radius: 5px;
+  border: 1px solid white;
 }
 
 .my-button:hover {
@@ -33,6 +34,17 @@
   text-decoration: none;
   padding: 5px 10px;
   border-radius: 5px;
+  border: 1px solid goldenrod;
+}
+
+.s-button {
+  width: 100%;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 2px solid white;
 }
 
 .active {
@@ -65,4 +77,16 @@
   padding: 0px 10px;
   font-size: 1.2rem;
   text-decoration: none;
+}
+
+.profile-image-div {
+  height: 50px;
+  width: 50px;
+  border-radius: 25px;
+  border: 2px solid #FF6B15;
+}
+
+.about {
+  margin: 0;
+  text-align: justify;
 }

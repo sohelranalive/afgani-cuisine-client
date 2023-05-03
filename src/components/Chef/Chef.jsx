@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Chef = (props) => {
 
-    const { picture, name, yearsOfExperience, numberOfRecipes, likes } = props.info;
+    const { picture, name, yearsOfExperience, numberOfRecipes, likes, id } = props.info;
 
     return (
         <div className="col">
@@ -14,7 +15,7 @@ const Chef = (props) => {
                     <p className="card-text">Numbers Of Recipe: {numberOfRecipes}</p>
                     <p>{likes} People liked this</p>
                 </div>
-                <button className='btn btn-danger'>View Recipe</button>
+                <Link className='my-button' to={`/chef_recipes/${id}`} >View Recipe</Link>
             </div>
         </div>
     );
