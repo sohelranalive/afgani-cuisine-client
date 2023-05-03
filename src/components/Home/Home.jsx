@@ -5,12 +5,10 @@ import Body from '../Body/Body';
 const Home = () => {
 
     return (
-        <>
-            <div className='bg-custom-color'>
-                <Banner></Banner>
-            </div>
+        <div>
+            <Banner></Banner>
             <Body></Body>
-        </>
+        </div>
     );
 };
 

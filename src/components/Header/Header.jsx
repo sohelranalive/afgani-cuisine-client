@@ -26,50 +26,50 @@ const Header = () => {
 
 
     return (
-        <div className='bg-custom-color'>
-            <Container className='sticky-top'>
-                <Navbar collapseOnSelect expand="lg" className='bg-white rounded'>
-                    <Container>
-                        <Navbar.Brand href="#home">
-                            <img src={logo} alt="" className='w-50' />
-                        </Navbar.Brand>
-                        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                        <Navbar.Collapse id="responsive-navbar-nav">
-                            <Nav className="mx-auto">
-                                <NavLink to='/' className={({ isActive }) => (isActive ? 'active' : 'default')}>Home</NavLink>
-                                <NavLink to='/blog' className={({ isActive }) => (isActive ? 'active' : 'default')}>Blog</NavLink>
-                            </Nav>
-                            <Nav>
-                                {
-                                    user ? <div className='hstack gap-3 justify-content-end align-items-center'>
-                                        <div className='profile-image-div'>
-                                            <img
-                                                data-tooltip-id="my-tooltip"
-                                                data-tooltip-content={user?.displayName}
-                                                src={user?.photoURL || profilePhoto} alt="" className='w-100 h-100 rounded-circle'
-                                            />
-                                            {
-                                                <Tooltip id="my-tooltip" />
-                                            }
-                                        </div>
-                                        <div className="vr"></div>
-                                        <button onClick={handleLogOut} className='my-button'>Logout</button>
+        <div>
+            {/* <Container className='sticky-top'> */}
+            <Navbar collapseOnSelect expand="lg">
+                <Container className='bg-white rounded mt-4 py-2'>
+                    <Navbar.Brand href="#home">
+                        <img src={logo} alt="" className='w-50' />
+                    </Navbar.Brand>
+                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                    <Navbar.Collapse id="responsive-navbar-nav">
+                        <Nav className="mx-auto">
+                            <NavLink to='/' className={({ isActive }) => (isActive ? 'active' : 'default')}>Home</NavLink>
+                            <NavLink to='/blog' className={({ isActive }) => (isActive ? 'active' : 'default')}>Blog</NavLink>
+                        </Nav>
+                        <Nav>
+                            {
+                                user ? <div className='hstack gap-3 justify-content-end align-items-center'>
+                                    <div className='profile-image-div'>
+                                        <img
+                                            data-tooltip-id="my-tooltip"
+                                            data-tooltip-content={user?.displayName}
+                                            src={user?.photoURL || profilePhoto} alt="" className='w-100 h-100 rounded-circle'
+                                        />
+                                        {
+                                            <Tooltip id="my-tooltip" />
+                                        }
                                     </div>
-                                        : <div className='hstack gap-3 justify-content-end align-items-center'>
-                                            <Link className='my-button' to='/login'>Login</Link>
-                                            <div className="vr"></div>
-                                            <Link className='my-button' to='/register'>Register</Link>
-                                        </div>
+                                    <div className="vr"></div>
+                                    <button onClick={handleLogOut} className='my-button'>Logout</button>
+                                </div>
+                                    : <div className='hstack gap-3 justify-content-end align-items-center'>
+                                        <Link className='my-button' to='/login'>Login</Link>
+                                        <div className="vr"></div>
+                                        <Link className='my-button' to='/register'>Register</Link>
+                                    </div>
 
 
-                                    // : <Link className='btn-custom' to='/login'><button className='btn btn-danger'>Login</button></Link>
-                                }
-                            </Nav>
-                        </Navbar.Collapse>
-                    </Container>
-                </Navbar>
-            </Container>
-        </div>
+                                // : <Link className='btn-custom' to='/login'><button className='btn btn-danger'>Login</button></Link>
+                            }
+                        </Nav>
+                    </Navbar.Collapse>
+                </Container>
+            </Navbar>
+            {/* </Container> */}
+        </div >
     );
 };
 

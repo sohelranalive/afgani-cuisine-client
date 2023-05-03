@@ -6,14 +6,14 @@ import { FaGithub, FaGoogle } from "react-icons/fa";
 
 const Login = () => {
 
+    const { userLogIn, googleLogIn, githubLogIn } = useContext(AuthContext)
+
     const [error, setError] = useState('')
     const [showPassword, setShowPassword] = useState(false)
 
     const navigate = useNavigate()
     const location = useLocation()
     const from = location.state?.from?.pathname || '/'
-
-    const { userLogIn } = useContext(AuthContext)
 
     const handleLogIn = (event) => {
         event.preventDefault()
@@ -30,13 +30,38 @@ const Login = () => {
                 navigate(from, { replace: true })
             })
             .catch(error => {
+                const errorCode = error.code;
+                if (errorCode == 'auth/wrong-password') {
+                    setError('Wrong Password')
+                }
+            })
+    }
+
+    const handleLogInWithGoogle = () => {
+        googleLogIn()
+            .then(result => {
+                console.log(result);
+                navigate(from, { replace: true })
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
+
+    const handleLogInWitGithub = () => {
+        githubLogIn()
+            .then(result => {
+                console.log(result);
+                navigate(from, { replace: true })
+            })
+            .catch(error => {
                 console.log(error);
             })
     }
 
     return (
-        <div className='bg-custom-color-light'>
-            <form onSubmit={handleLogIn} className='w-25 mx-auto text-white fw-bold pt-5 pb-5'>
+        <div className='mt-5 mb-5'>
+            <form onSubmit={handleLogIn} className='w-25 mx-auto text-white fw-bold'>
                 <div className="mb-3">
                     <label htmlFor="inputEmail" className="form-label">Email address</label>
                     <input type="email" name='email' required className="form-control" id="inputEmail" />
@@ -53,15 +78,15 @@ const Login = () => {
                     <div className="form-text text-white">{error}</div>
                 </div>
                 <button type="submit" className="btn btn-light">Login</button>
-                <div className="mt-3 mb-3">
+                <div className="mt-3 mb-4">
                     <div className="form-text text-white">New to this website? Please <Link to='/register' className='text-white fst-italic'> Register</Link> </div>
                 </div>
-                <div className="mt-5 mb-3">
-                    <button className='s-button'>Login With <FaGoogle /></button>
-                </div><div className="mt-2 mb-3">
-                    <button className='s-button'>Login With <FaGithub /></button>
-                </div>
             </form>
+            <div className='text-center pb-5'>
+                <button onClick={handleLogInWithGoogle} className='s-button mb-2'>Login With Google <FaGoogle /></button>
+                <br />
+                <button onClick={handleLogInWitGithub} className='s-button'>Login With Github <FaGithub /></button>
+            </div>
         </div>
     );
 };

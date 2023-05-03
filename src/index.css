@@ -9,12 +9,6 @@
   background-color: #FF6B15;
 }
 
-.bg-custom-color-light {
-  background-color: #FF6B15;
-  filter: brightness(90%);
-}
-
-
 .my-button {
   background-color: #FF6B15;
   font-weight: bold;
@@ -35,16 +29,6 @@
   padding: 5px 10px;
   border-radius: 5px;
   border: 1px solid goldenrod;
-}
-
-.s-button {
-  width: 100%;
-  font-weight: bold;
-  font-size: 1.2rem;
-  text-decoration: none;
-  padding: 5px 10px;
-  border-radius: 5px;
-  border: 2px solid white;
 }
 
 .active {
@@ -89,4 +73,17 @@
 .about {
   margin: 0;
   text-align: justify;
+}
+
+.my-color {
+  color: #FF6B15;
+}
+
+.s-button {
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-decoration: none;
+  padding: 5px 15px;
+  border-radius: 5px;
+  border: 2px solid white;
 }

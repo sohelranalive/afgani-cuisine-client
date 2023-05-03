@@ -3,6 +3,7 @@ import { Container } from 'react-bootstrap';
 import { useLoaderData } from 'react-router-dom';
 import Recipe from '../Recipe/Recipe';
 
+
 const ChefRecipes = () => {
     const chefDetails = useLoaderData()
     const { id, name, picture, shortBio, yearsOfExperience, numberOfRecipes, likes } = chefDetails
@@ -17,11 +18,12 @@ const ChefRecipes = () => {
             .then(data => setFoodItems(data))
     }, [])
 
+
     return (
-        <div className='bg-custom-color-light pb-5 pt-5'>
-            <Container>
+        <div>
+            <Container className='mt-5 mb-5'>
                 <h1 className='text-center text-white fw-bold'>Chef's ID: {id}</h1>
-                <h3 className='text-center text-white'>{name}'s special food items</h3>
+                <h2 className='text-center text-white mb-5'>Details About {name} and his special food items</h2>
                 <div className='d-md-flex'>
                     <div className='col col-md-4 p-2'>
                         <div className="card">
