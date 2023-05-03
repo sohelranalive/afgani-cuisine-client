@@ -10,9 +10,12 @@ const PrivateRoute = ({ children }) => {
     const { user, loading } = useContext(AuthContext)
 
     if (loading) {
-        return (<div className="spinner-border text-warning" role="status">
-            <span className="visually-hidden">Loading...</span>
-        </div>);
+        return (
+            <div class="d-flex justify-content-center align-items-center spinner-style">
+                <div className="spinner-border text-light" style={{ width: '5rem', height: '5rem' }} role="status">
+                    <span className="visually-hidden">Loading...</span>
+                </div>
+            </div>);
     }
 
     if (user) {

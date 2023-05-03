@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { useLoaderData } from 'react-router-dom';
 import Recipe from '../Recipe/Recipe';
+import LazyLoad from 'react-lazy-load';
 
 
 const ChefRecipes = () => {
@@ -13,7 +14,7 @@ const ChefRecipes = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/cuisine/${id}`)
+        fetch(`https://b7a10-chef-recipe-hunter-server-side-sohelranalive.vercel.app/cuisine/${id}`)
             .then(res => res.json())
             .then(data => setFoodItems(data))
     }, [])
@@ -27,7 +28,9 @@ const ChefRecipes = () => {
                 <div className='d-md-flex'>
                     <div className='col col-md-4 p-2'>
                         <div className="card">
-                            <img src={picture} className="card-img-top" alt="..." />
+                            <LazyLoad offset={300}>
+                                <img src={picture} className="card-img-top" alt="..." />
+                            </LazyLoad>
                             <div className="card-body">
                                 <h5 className="card-title">{name}</h5>
                                 <br />
@@ -40,6 +43,14 @@ const ChefRecipes = () => {
                         </div>
                     </div>
                     <div className='col col-md-8 p-2'>
+
+                        {/* {
+                            spinner && <div class="d-flex justify-content-center align-items-center spinner-style">
+                                <div className="spinner-border text-light" style={{ width: '5rem', height: '5rem' }} role="status">
+                                    <span className="visually-hidden">Loading...</span>
+                                </div>
+                            </div>
+                        } */}
                         {
                             foodItems.map(recipe => <Recipe
                                 recipe={recipe}

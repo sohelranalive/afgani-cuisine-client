@@ -7,7 +7,7 @@ const Body = () => {
     const [chefInfo, setChefInfo] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/')
+        fetch('https://b7a10-chef-recipe-hunter-server-side-sohelranalive.vercel.app/')
             .then(res => res.json())
             .then(data => setChefInfo(data))
     }, [])
