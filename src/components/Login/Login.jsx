@@ -16,6 +16,7 @@ const Login = () => {
     const from = location.state?.from?.pathname || '/'
 
     const handleLogIn = (event) => {
+        setError('')
         event.preventDefault()
 
         const form = event.target;
@@ -25,14 +26,18 @@ const Login = () => {
         userLogIn(email, password)
             .then(result => {
                 const createdUser = result.user;
-                console.log(createdUser);
+                //console.log(createdUser);
                 form.reset()
                 navigate(from, { replace: true })
             })
             .catch(error => {
                 const errorCode = error.code;
+                //console.log(errorCode);
                 if (errorCode == 'auth/wrong-password') {
                     setError('Wrong Password')
+                }
+                else if (errorCode == 'auth/user-not-found') {
+                    setError('Email address is not valid')
                 }
             })
     }

@@ -3,7 +3,7 @@ import React from 'react';
 const FoodCart = ({ singleFoodItem }) => {
 
     const { name, description, imageUrl } = singleFoodItem
-    console.log('Inside foodCart', singleFoodItem);
+    //console.log('Inside foodCart', singleFoodItem);
 
     return (
         <div className="col">

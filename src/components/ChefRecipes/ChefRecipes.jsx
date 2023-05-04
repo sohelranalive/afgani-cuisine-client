@@ -11,7 +11,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 const ChefRecipes = () => {
     const chefDetails = useLoaderData()
     const { id, name, picture, shortBio, yearsOfExperience, numberOfRecipes, likes } = chefDetails
-    console.log(chefDetails)
+    //console.log(chefDetails)
 
     const [foodItems, setFoodItems] = useState([])
     const [dataLoading, setDataLoading] = useState(false)
@@ -64,7 +64,7 @@ const ChefRecipes = () => {
                         </div>
                     </div>
                     <div className='col col-md-8 p-2'>
-
+                        {/* sippiner/loader on data loading start */}
                         {
                             <div className={!dataLoading ? 'd-none' : 'block'}>
                                 <div className="d-flex justify-content-center align-items-center">
@@ -75,6 +75,7 @@ const ChefRecipes = () => {
                             </div>
 
                         }
+                        {/* sippiner/loader on data loading start */}
                         {
                             foodItems.map(recipe => <Recipe
                                 recipe={recipe}

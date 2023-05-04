@@ -27,7 +27,7 @@ const Header = () => {
         <div>
             <Navbar collapseOnSelect expand="lg">
                 <Container className='bg-white rounded mt-4 py-2'>
-                    <Navbar.Brand href="#home">
+                    <Navbar.Brand>
                         <img src={logo} alt="" className='w-50' />
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />

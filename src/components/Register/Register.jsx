@@ -38,12 +38,16 @@ const Register = () => {
                         // ...
                     });
                 const createdUser = result.user;
-                console.log(createdUser);
+                //console.log(createdUser);
                 userLogOut()
                 navigate('/login')
             })
             .catch(error => {
-                console.log(error);
+                const errorCode = error.code;
+                // console.log(errorCode);
+                if (errorCode == 'auth/email-already-in-use') {
+                    setError('Enter a new email, this email already in use')
+                }
             })
     }
 
@@ -78,7 +82,7 @@ const Register = () => {
                 </div>
                 <div className="mb-3">
                     <label htmlFor="inputPhoto" className="form-label">Photo URL</label>
-                    <input type="text" name='photo' className="form-control" id="inputPhoto" />
+                    <input type="url" placeholder='optional' name='photo' className="form-control" id="inputPhoto" />
                 </div>
                 <div className="mb-3">
                     <label htmlFor="inputEmail" className="form-label">Email address</label>
