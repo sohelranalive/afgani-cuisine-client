@@ -4,6 +4,9 @@ import { useLoaderData } from 'react-router-dom';
 import Recipe from '../Recipe/Recipe';
 import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
+import 'react-lazy-load-image-component/src/effects/blur.css';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+
 
 const ChefRecipes = () => {
     const chefDetails = useLoaderData()
@@ -33,7 +36,15 @@ const ChefRecipes = () => {
                 <div className='d-md-flex'>
                     <div className='col col-md-4 p-2'>
                         <div className="card">
-                            <img src={picture} className="card-img-top" alt="..." />
+                            <LazyLoadImage
+                                className="card-img-top"
+                                // height={image.height}
+                                // width={image.width}
+                                effect="blur"
+                                src={picture} />
+
+                            {/* <img src={picture} className="card-img-top" alt="..." /> */}
+
                             <div className="card-body">
                                 <h5 className="card-title">{name}</h5>
                                 <br />

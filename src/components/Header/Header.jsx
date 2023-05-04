@@ -12,8 +12,6 @@ const Header = () => {
 
     const { user, userLogOut } = useContext(AuthContext)
 
-    const [isShown, setIsShown] = useState(false);
-
     const handleLogOut = () => {
         userLogOut()
             .then(() => {
@@ -27,7 +25,6 @@ const Header = () => {
 
     return (
         <div>
-            {/* <Container className='sticky-top'> */}
             <Navbar collapseOnSelect expand="lg">
                 <Container className='bg-white rounded mt-4 py-2'>
                     <Navbar.Brand href="#home">
@@ -60,15 +57,11 @@ const Header = () => {
                                         <div className="vr"></div>
                                         <Link className='my-button' to='/register'>Register</Link>
                                     </div>
-
-
-                                // : <Link className='btn-custom' to='/login'><button className='btn btn-danger'>Login</button></Link>
                             }
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-            {/* </Container> */}
         </div >
     );
 };
