@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { useLoaderData } from 'react-router-dom';
 import Recipe from '../Recipe/Recipe';
-
+import { Rating } from '@smastrom/react-rating'
+import '@smastrom/react-rating/style.css'
 
 const ChefRecipes = () => {
     const chefDetails = useLoaderData()
@@ -33,9 +34,16 @@ const ChefRecipes = () => {
                                 <br />
                                 <p className="card-text about">{shortBio}</p>
                                 <br />
-                                <p className="card-text ">{likes} Pople liked !!!</p>
-                                <p className="card-text">Numbers of Recipes: {numberOfRecipes}</p>
+                                <p className="card-text mb-0">Numbers of Recipes: {numberOfRecipes}</p>
                                 <p className="card-text">Years of Experience: {yearsOfExperience}</p>
+                                <p className="card-text mb-0 ms-2">Reviews: </p>
+                                <p>
+                                    <Rating
+                                        style={{ maxWidth: 180 }}
+                                        value={likes}
+                                        readOnly
+                                    />
+                                </p>
                             </div>
                         </div>
                     </div>
