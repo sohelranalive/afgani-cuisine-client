@@ -11,12 +11,17 @@ const ChefRecipes = () => {
     console.log(chefDetails)
 
     const [foodItems, setFoodItems] = useState([])
+    const [dataLoading, setDataLoading] = useState(false)
 
 
     useEffect(() => {
+        setDataLoading(true)
         fetch(`https://b7a10-chef-recipe-hunter-server-side-sohelranalive.vercel.app/cuisine/${id}`)
             .then(res => res.json())
-            .then(data => setFoodItems(data))
+            .then(data => {
+                setFoodItems(data)
+                setDataLoading(false)
+            })
     }, [])
 
 
@@ -49,13 +54,16 @@ const ChefRecipes = () => {
                     </div>
                     <div className='col col-md-8 p-2'>
 
-                        {/* {
-                            spinner && <div class="d-flex justify-content-center align-items-center spinner-style">
-                                <div className="spinner-border text-light" style={{ width: '5rem', height: '5rem' }} role="status">
-                                    <span className="visually-hidden">Loading...</span>
+                        {
+                            <div className={!dataLoading ? 'd-none' : 'block'}>
+                                <div className="d-flex justify-content-center align-items-center">
+                                    <div className="spinner-border text-light" style={{ width: '5rem', height: '5rem' }} role="status">
+                                        <span className="visually-hidden">Loading...</span>
+                                    </div>
                                 </div>
                             </div>
-                        } */}
+
+                        }
                         {
                             foodItems.map(recipe => <Recipe
                                 recipe={recipe}
@@ -65,8 +73,8 @@ const ChefRecipes = () => {
                         }
                     </div>
                 </div>
-            </Container>
-        </div>
+            </Container >
+        </div >
     );
 };
 

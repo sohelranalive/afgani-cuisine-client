@@ -24,7 +24,7 @@ const Chef = (props) => {
                         className='ms-0'
                     />
                 </div>
-                <Link className='my-button' to={`/chef_recipes/${id}`} >View Recipe</Link>
+                <Link className='my-button text-center' to={`/chef_recipes/${id}`} >View Recipe</Link>
             </div>
         </div>
     );

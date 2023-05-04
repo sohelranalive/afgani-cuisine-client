@@ -11,7 +11,7 @@ const PrivateRoute = ({ children }) => {
 
     if (loading) {
         return (
-            <div class="d-flex justify-content-center align-items-center spinner-style">
+            <div className="d-flex justify-content-center align-items-center spinner-style">
                 <div className="spinner-border text-light" style={{ width: '5rem', height: '5rem' }} role="status">
                     <span className="visually-hidden">Loading...</span>
                 </div>

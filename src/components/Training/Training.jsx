@@ -20,37 +20,37 @@ const Training = () => {
             <Container className=''>
                 <div className="row">
                     <div className="col p-5">
-                        <form onSubmit={handleWorkshopRegistration} class="row g-3 text-white fw-bold px-5">
-                            <div class="col-md-6">
-                                <label for="f-name" class="form-label">First Name</label>
-                                <input type="text" required class="form-control" id="f-name" />
+                        <form onSubmit={handleWorkshopRegistration} className="row g-3 text-white fw-bold px-5">
+                            <div className="col-md-6">
+                                <label htmlFor="f-name" className="form-label">First Name</label>
+                                <input type="text" required className="form-control" id="f-name" />
                             </div>
-                            <div class="col-md-6">
-                                <label for="s-name" class="form-label">Second Name</label>
-                                <input type="text" required class="form-control" id="s-name" />
+                            <div className="col-md-6">
+                                <label htmlFor="s-name" className="form-label">Second Name</label>
+                                <input type="text" required className="form-control" id="s-name" />
                             </div>
-                            <div class="col-12">
-                                <label for="email" class="form-label">Email</label>
-                                <input type="email" required class="form-control" id="email" placeholder='demo@gmail.com' />
+                            <div className="col-12">
+                                <label htmlFor="email" className="form-label">Email</label>
+                                <input type="email" required className="form-control" id="email" placeholder='demo@gmail.com' />
                             </div>
-                            <div class="col-12">
-                                <label for="phone" required class="form-label">Phone</label>
-                                <input type="number" class="form-control" id="phone" placeholder='+8801' />
+                            <div className="col-12">
+                                <label htmlFor="phone" required className="form-label">Phone</label>
+                                <input type="number" className="form-control" id="phone" placeholder='+8801' />
                             </div>
-                            <div class="col-12">
-                                <label for="inputAddress" class="form-label">Address</label>
-                                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" />
+                            <div className="col-12">
+                                <label htmlFor="inputAddress" className="form-label">Address</label>
+                                <input type="text" className="form-control" id="inputAddress" placeholder="1234 Main St" />
                             </div>
-                            <div class="col-md-6">
-                                <label for="inputCity" class="form-label">City</label>
-                                <input type="text" class="form-control" id="inputCity" />
+                            <div className="col-md-6">
+                                <label htmlFor="inputCity" className="form-label">City</label>
+                                <input type="text" className="form-control" id="inputCity" />
                             </div>
-                            <div class="col-md-6">
-                                <label for="inputZip" class="form-label">Zip</label>
-                                <input type="text" class="form-control" id="inputZip" />
+                            <div className="col-md-6">
+                                <label htmlFor="inputZip" className="form-label">Zip</label>
+                                <input type="text" className="form-control" id="inputZip" />
                             </div>
-                            <div class="col-12 mt-5 text-center">
-                                <button type="submit" class="s-button">Sign in</button>
+                            <div className="col-12 mt-5 text-center">
+                                <button type="submit" className="s-button">Sign in</button>
                             </div>
                         </form>
                         <ToastContainer />

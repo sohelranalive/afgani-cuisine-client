@@ -1,5 +1,5 @@
 import React from 'react';
-import { useRouteError } from 'react-router-dom';
+import { Link, useRouteError } from 'react-router-dom';
 import errorPhoto from '../../assets/error.png'
 
 const ErrorPage = () => {
@@ -11,7 +11,9 @@ const ErrorPage = () => {
             <img src={errorPhoto} alt="" />
             <h1>{status}</h1>
             <h1>Opps !!!</h1>
-            <h1>{error.message}</h1>
+            <h1>{error?.message}</h1>
+            <br />
+            <Link to='/'>Back to homepage</Link>
         </div>
     );
 };
