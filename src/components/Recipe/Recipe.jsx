@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { IoIosHeartEmpty, IoIosHeart } from "react-icons/io";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Rating } from '@smastrom/react-rating'
+import '@smastrom/react-rating/style.css'
 
 const Recipe = (props) => {
 
@@ -37,7 +39,14 @@ const Recipe = (props) => {
                 <p className="card-text">Ingredients: {ingredients.join(', ')}</p>
                 <p className="card-text about">How to cook: {cookingMethod}</p>
                 <br />
-                <p className="card-text about">Ratings: {rating}</p>
+                <p className="card-text ms-1 mb-0"> Ratings: {rating}</p>
+                <p className="card-text">
+                    <Rating
+                        style={{ maxWidth: 100 }}
+                        value={rating}
+                        readOnly
+                    />
+                </p>
             </div>
         </div>
     );

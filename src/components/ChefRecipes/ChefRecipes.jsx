@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { useLoaderData } from 'react-router-dom';
 import Recipe from '../Recipe/Recipe';
-import LazyLoad from 'react-lazy-load';
 
 
 const ChefRecipes = () => {
@@ -28,9 +27,7 @@ const ChefRecipes = () => {
                 <div className='d-md-flex'>
                     <div className='col col-md-4 p-2'>
                         <div className="card">
-                            <LazyLoad offset={300}>
-                                <img src={picture} className="card-img-top" alt="..." />
-                            </LazyLoad>
+                            <img src={picture} className="card-img-top" alt="..." />
                             <div className="card-body">
                                 <h5 className="card-title">{name}</h5>
                                 <br />
