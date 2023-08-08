@@ -75,7 +75,7 @@ const Register = () => {
 
     return (
         <div className='mt-5 mb-5'>
-            <form onSubmit={handleRegistration} className='w-25 mx-auto text-white fw-bold'>
+            <form onSubmit={handleRegistration} className='col-10 col-md-6 mx-auto text-white fw-bold'>
                 <div className="mb-3">
                     <label htmlFor="inputName" className="form-label">Name</label>
                     <input type="text" name='name' required className="form-control" id="inputName" />

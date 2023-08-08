@@ -66,7 +66,7 @@ const Login = () => {
 
     return (
         <div className='mt-5 mb-5'>
-            <form onSubmit={handleLogIn} className='w-25 mx-auto text-white fw-bold'>
+            <form onSubmit={handleLogIn} className='col-10 col-md-6 mx-auto text-white fw-bold'>
                 <div className="mb-3">
                     <label htmlFor="inputEmail" className="form-label">Email address</label>
                     <input type="email" name='email' required className="form-control" id="inputEmail" />
@@ -82,7 +82,7 @@ const Login = () => {
                 <div className="mt-3 mb-3">
                     <div className="form-text text-white">{error}</div>
                 </div>
-                <button type="submit" className="btn btn-light">Login</button>
+                <button type="submit" className="btn btn-light w-25">Login</button>
                 <div className="mt-3 mb-4">
                     <div className="form-text text-white">New to this website? Please <Link to='/register' className='text-white fst-italic'> Register</Link> </div>
                 </div>
